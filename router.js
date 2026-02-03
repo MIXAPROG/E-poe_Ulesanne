@@ -4,10 +4,31 @@ import { displayCartView } from "./views/cartView.js";
 import { displayAllProductsView } from "./views/allProductsView.js";
 
 export const navigate = (view, param) => {
-    if (view === "favorites") location.hash = "#/favorites";
-    if (view === "cart") location.hash = "#/cart";
-    if (view === "productDetail") location.hash = `#/product/${param.id}`;
-    if (view === "allProducts") location.hash = "#/";
+    if (view === "favorites") {
+        location.hash = "#/favorites";
+        displayFavoritesView();
+        return;
+    }
+
+    if (view === "cart") {
+        location.hash = "#/cart";
+        displayCartView();
+        return;
+    }
+
+    if (view === "productDetail") {
+        location.hash = `#/product/${param.id}`;
+        displayProductDetailView(param);
+        return;
+    }
+
+    if (view === "allProducts") {
+        location.hash = "#/";
+        if (param) {
+            displayAllProductsView(param);
+        } else {
+        }
+    }
 };
 
 export const handleRoute = (products) => {

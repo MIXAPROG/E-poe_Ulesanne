@@ -1,5 +1,5 @@
 import { displayAllProductsView } from "./views/allProductsView.js";
-import { navigate } from "./router.js";
+import { navigate, handleRoute } from "./router.js";
 import { fetchProducts } from "./api.js";
 import { cartConstructor } from "./constructors/Cart.js";
 
@@ -14,7 +14,7 @@ const initApp = async () => {
     products = await fetchProducts();
 
     document.getElementById("home-button").onclick = () =>
-        displayAllProductsView(products);
+        navigate("allProducts", products);
 
     document.getElementById("favourites").onclick = () =>
         navigate("favorites");
@@ -22,8 +22,12 @@ const initApp = async () => {
     document.getElementById("cart-btn").onclick = () =>
         navigate("cart");
 
+    window.addEventListener("hashchange", () => handleRoute(products));
+    
+    handleRoute(products);
+
     updateCartCount();
-    displayAllProductsView(products);
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
+

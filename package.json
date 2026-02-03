@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/MykhailoBul/E-poe_Ulesanne/issues"
   },
-  "homepage": "https://github.com/MykhailoBul/E-poe_Ulesanne#readme"
+  "homepage": "https://github.com/MykhailoBul/E-poe_Ulesanne#readme",
+  "devDependencies": {}
 }
