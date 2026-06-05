@@ -1,6 +1,7 @@
 {
   "name": "e-poe_ulesannebeta",
   "version": "1.0.0",
+  "type": "module",
   "description": "- Tagaserver rakendatud Node.js Expressil \r - Lisatud GET-marsruudid toodete, kategooriate ja toote ID-de jaoks \r - Rakendatud lemmikud kliendi ID järgi salvestamisega \r - Kasutab kliendi jaoks seansse ja ostukorvi jaoks localStorage'i \r - Esiserver integreeritud tagaserveri API-ga",
   "main": "main.js",
   "scripts": {
